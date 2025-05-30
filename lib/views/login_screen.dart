@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tickets_transporte/views/otp_login_screen.dart';
 
 import '../models/user.dart';
 import '../services/data_service.dart';
+import 'package:tickets_transporte/views/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -137,15 +139,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 const SizedBox(height: 20),
                 TextButton(
                   onPressed: () {
-                    // Aqui seria implementada a lógica de registro
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                          content:
-                              Text('Função de registro a ser implementada')),
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const SignupScreen()),
                     );
                   },
                   child: const Text('Não tem conta? Cadastre-se'),
                 ),
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const OTPLoginScreen()),
+                    );
+                  },
+                  child: const Text('otp login'),
+                )
               ],
             ),
           ),

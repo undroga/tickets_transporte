@@ -23,8 +23,6 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
   Widget build(BuildContext context) {
     final user = _dataService.currentUser;
 
-    var price;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text('Comprar Ticket'),
@@ -273,9 +271,9 @@ class _BuyTicketScreenState extends State<BuyTicketScreen> {
                               children: [
                                 const Text('Saldo disponível:'),
                                 Text(
-                                  '${user.balance.toStringAsFixed(2)} MZN',
+                                  '${user!.balance.toStringAsFixed(2)} MZN',
                                   style: TextStyle(
-                                    color: user.balance >=
+                                    color: user!.balance >=
                                             _selectedRoute!.price *
                                                 _ticketQuantity
                                         ? Colors.green
