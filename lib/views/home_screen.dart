@@ -238,12 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _navigateToRoutes() {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => RouteDetailScreen(
-                  route: rotas.fromJson(json as Map<String, dynamic>),
-                )));
+    // Navigator.push(context, MaterialPageRoute(builder: (context) => RoutesScreen()));
     print('Navegando para Rotas');
   }
 
@@ -253,7 +248,10 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   void _navigateToRouteDetail(rotas route) {
-    // Navigator.push(context, MaterialPageRoute(builder: (context) => RouteDetailScreen(route: route)));
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (context) => RouteDetailScreen(route: route)));
     print('Navegando para detalhes da rota: ${route.name}');
   }
 
