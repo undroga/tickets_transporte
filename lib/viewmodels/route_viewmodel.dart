@@ -186,7 +186,7 @@ class RouteViewModel extends ChangeNotifier {
       ),
       rotas(
         id: '4',
-        name: 'Expresso Maputo-Marracuene',
+        name: 'Linha 4',
         start: 'Maputo',
         end: 'Marracuene',
         price: 35.0,

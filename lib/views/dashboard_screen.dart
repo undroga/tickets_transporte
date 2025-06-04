@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tickets_transporte/components/ticket_card.dart';
 import 'package:tickets_transporte/models/rotas.dart';
+import 'package:tickets_transporte/models/user.dart';
 import 'package:tickets_transporte/services/route_service.dart';
 import 'package:tickets_transporte/views/route_detail_screen.dart';
 
@@ -35,7 +36,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
           ),
         ],
       ),
-      body: user == null
+      body: user != null
           ? const Center(child: CircularProgressIndicator())
           : RefreshIndicator(
               onRefresh: () async {
@@ -71,7 +72,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Olá, ${user.name.split(' ')[0]}',
+                                      'Olá, ${user!.name.split(' ')[0]}',
                                       style: const TextStyle(
                                         fontSize: 20,
                                         fontWeight: FontWeight.bold,

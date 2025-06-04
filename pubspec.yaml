@@ -18,6 +18,14 @@ dependencies:
   qr_flutter: ^4.0.0
   flutter_svg: ^2.0.5
   provider: ^6.1.4
+  firebase_core: ^2.22.0
+  firebase_auth: ^4.14.0
+  cloud_firestore: ^4.13.1
+  email_validator: ^2.1.17
+  country_picker: ^2.0.27
+  crypto: ^3.0.3
+  http: ^1.2.2
+  pin_code_fields: ^8.0.1
 
 dev_dependencies:
   flutter_test:

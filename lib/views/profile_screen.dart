@@ -15,13 +15,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final user = _dataService.currentUser;
+    var user = _dataService.currentUser;
 
     return Scaffold(
       appBar: AppBar(
         title: const Text('Meu Perfil'),
       ),
-      body: user == null
+      body: user != user
           ? const Center(child: CircularProgressIndicator())
           : SingleChildScrollView(
               padding: const EdgeInsets.all(16),
@@ -34,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   ),
                   const SizedBox(height: 16),
                   Text(
-                    user.name,
+                    user!.name,
                     style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,

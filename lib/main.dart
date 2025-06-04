@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'package:tickets_transporte/views/buy_ticket_screen.dart';
 import 'views/login_screen.dart';
 import 'views/home_screen.dart';
 import 'views/tickets_screen.dart';
 import 'views/profile_screen.dart';
-import 'viewmodels/auth_viewmodel.dart';
-import 'viewmodels/ticket_viewmodel.dart';
-import 'viewmodels/route_viewmodel.dart';
-import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert';
-import 'package:intl/intl.dart';
+import 'package:tickets_transporte/views/signup_screen.dart';
+import 'package:tickets_transporte/views/otp_verification_screen.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() {
@@ -45,10 +39,14 @@ class MaputoTransporteApp extends StatelessWidget {
       ],
       home: const LoginScreen(),
       routes: {
+        '/otp-verification': (context) => const OTPVerificationScreen(
+              telefone: '', // Será passado via argumentos
+            ),
         '/home': (context) => const HomeScreen(),
         '/tickets': (context) => const TicketsScreen(),
         '/buy': (context) => const BuyTicketScreen(),
         '/profile': (context) => const ProfileScreen(),
+        '/signup': (context) => const SignupScreen(),
       },
     );
   }
